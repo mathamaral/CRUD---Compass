@@ -9,7 +9,7 @@ import br.com.projeto.produto.model.Products;
 
 public interface ProductsRepository extends JpaRepository<Products, Number>{
 	
-	@Query(value = "SELECT * FROM Product WHERE (:q IS NULL OR (UPPER(name) LIKE UPPER(CONCAT('%', :q, '%'))"
+	@Query(value = "SELECT * FROM Products WHERE (:q IS NULL OR (UPPER(name) LIKE UPPER(CONCAT('%', :q, '%'))"
 			+ "OR UPPER(description) LIKE UPPER(CONCAT('%', :q, '%'))))"
 			+ "AND (:min_price IS NULL OR price >= :min_price)"
 			+ "AND (:max_price IS NULL OR price <= :max_price)", nativeQuery = true)
