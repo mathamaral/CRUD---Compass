@@ -39,7 +39,7 @@ public class ProductsController {
 	@Transactional
 	public ResponseEntity<Products> create(@RequestBody ProductsForm form) {
 		var product = new Products();
-		BeanUtils.copyProperties(form, product); // converting a Form to Entity
+		BeanUtils.copyProperties(form, product); 
 		return ResponseEntity.status(HttpStatus.CREATED).body(productsService.create(product));
 	}
 	
